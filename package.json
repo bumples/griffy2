@@ -28,10 +28,9 @@
   "keywords": [
     "gatsby"
   ],
-  "license": "0BSD",
-  "resolutions": {
-    "contentful": "3.0.6"
-  },
+   
+  "license": "0BSD" ,
+  
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -47,5 +46,5 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
-  }
+  } 
 }

@@ -1,8 +1,4 @@
- require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
-});
-
-module.exports = {
+ module.exports = {
   siteMetadata: {
     title: `Bumples`,
     description: `Books for kids 4-10.`,
