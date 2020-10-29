@@ -29,12 +29,13 @@
     "gatsby"
   ],
   "license": "0BSD",
+  "resolutions": {
+    "contentful": "3.0.6"
+  },
   "scripts": {
     "build": "gatsby build",
-    "gbuild": "env-cmd -f .env.development gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "gdevelop": "env-cmd -f .env.development gatsby develop",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",

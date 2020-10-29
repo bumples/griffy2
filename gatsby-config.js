@@ -9,12 +9,13 @@ module.exports = {
     author: `@gatsbyjs`
   },
   plugins: [
-     "gatsby-plugin-react-helmet",
+      "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-source-contentful",
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+          spaceId: `dawlrnrnd2gl `,
+        // Learn about environment variables: https://gatsby.app/env-vars
+        accessToken: `36XlVTeALWMZTfLF8kIPknL1Zn89v2Z0gTGYOHkAVyc`
       },
     },
     {
