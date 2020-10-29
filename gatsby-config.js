@@ -1,21 +1,4 @@
-let contentfulConfig
-try {
-  contentfulConfig = require('./.contentful')
-} catch (e) {
-  contentfulConfig = {
-    production: {
-      spaceId: process.env.SPACE_ID,
-      accessToken: process.env.ACCESS_TOKEN,
-    },
-  }
-} finally {
-  const { spaceId, accessToken } = contentfulConfig.production
-  if (!spaceId || !accessToken) {
-    throw new Error('Contentful space ID and access token need to be provided.')
-  }
-}
-
-require("dotenv").config({
+ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 });
 
