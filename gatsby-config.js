@@ -1,3 +1,20 @@
+let contentfulConfig
+try {
+  contentfulConfig = require('./.contentful')
+} catch (e) {
+  contentfulConfig = {
+    production: {
+      spaceId: process.env.SPACE_ID,
+      accessToken: process.env.ACCESS_TOKEN,
+    },
+  }
+} finally {
+  const { spaceId, accessToken } = contentfulConfig.production
+  if (!spaceId || !accessToken) {
+    throw new Error('Contentful space ID and access token need to be provided.')
+  }
+}
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`
 });
@@ -23,19 +40,9 @@ module.exports = {
         name: `images`,
         path: `${__dirname}/src/images`
       }
-    },
-    
-     {
-      resolve: `@nearform/gatsby-source-contentful`,
-      options: {
-        spaceId: `your_space_id`,
-        // Learn about environment variables: https://gatsby.app/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-      },
-    },
-    
-      `gatsby-transformer-sharp`,
-      `gatsby-plugin-sharp`,
+    } 
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -47,7 +54,7 @@ module.exports = {
         display: `minimal-ui`,
         
       }
-    },
+    } 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
