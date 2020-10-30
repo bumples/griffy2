@@ -21,9 +21,10 @@ module.exports = {
     {
       resolve: `gatsby-source-contentful`,
       options: {
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        spaceId: `dawlrnrnd2gl`,
         // Learn about environment variables: https://gatsby.app/env-vars
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        accessToken: `36XlVTeALWMZTfLF8kIPknL1Zn89v2Z0gTGYOHkAVyc` 
+        
         
       },
     },
@@ -43,8 +44,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/logo.svg`, // This path is relative to the root of the site.
-      },
+    },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
