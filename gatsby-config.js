@@ -1,6 +1,9 @@
- require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
-});
+const dotenv = require('dotenv')
+
+if (process.env.NODE_ENV !== 'production') {
+  dotenv.config()
+}
+
 module.exports = {
   siteMetadata: {
     title: `Bumples`,
@@ -17,17 +20,8 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: `dawlrnrnd2gl`,
-        // Learn about environment variables: https://gatsby.app/env-vars
-        accessToken: `36XlVTeALWMZTfLF8kIPknL1Zn89v2Z0gTGYOHkAVyc` 
-        
-        
-      },
-    },
+    `gatsby-plugin-sharp`, 
+
     // {
     //   resolve: "gatsby-plugin-snipcart",
     //   options: {
@@ -41,11 +35,18 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `663399`,
+        theme_color: `663399`,
         display: `minimal-ui`,
     },
     },
+    {
+      resolve: 'gatsby-source-contentful',
+      options:{
+        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
