@@ -1,13 +1,9 @@
 const path = require('path')
-const { createFilePath } = require
-('gatsby-source-filesystem')
+const { createFilePath } = require('gatsby-source-filesystem')
 
-const PostTemplate = path.resolve
-('./src/templates/post-template.js')
-const BlogTemplate = path.resolve
-('./src/templates/blog-template.js')
-const ProductTemplate = path.resolve
-('./src/templates/product-template.js')
+const PostTemplate = path.resolve('./src/templates/post-template.js')
+const BlogTemplate = path.resolve('./src/templates/blog-template.js')
+const ProductTemplate = path.resolve('./src/templates/product-template.js')
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -20,6 +16,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
     })
   }
 }
+
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
@@ -33,7 +30,6 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-
       allContentfulProduct {
         edges {
           node {
@@ -43,6 +39,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `)
+
   const posts = result.data.allMarkdownRemark.edges
   posts.forEach(({ node: post }) => {
     createPage({
@@ -86,4 +83,3 @@ exports.createPages = async ({ graphql, actions }) => {
     })
   })
 }
-
