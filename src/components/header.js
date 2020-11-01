@@ -39,7 +39,7 @@ class Header extends React.Component {
           {/* Title / Logo */}
           <span style={{ display: 'flex', alignItems: 'center' }}>
             <img
-              src={gatsbyLogo}
+              //src={gatsbyLogo}
               alt="Gatsby Garb Logo"
               style={{
                 borderRadius: '50%',

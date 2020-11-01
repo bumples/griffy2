@@ -42,7 +42,6 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const posts = result.data.allMarkdownRemark.edges
   posts.forEach(({ node: post }) => {
-    if (!data) { return null };
     createPage({
       path: `posts${post.fields.slug}`,
       component: PostTemplate,
