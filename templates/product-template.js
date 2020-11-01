@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -23,8 +23,7 @@ const ProductTemplate = ({ data: { contentfulProduct }, location }) => (
       <h4>${contentfulProduct.price}</h4>
       <p>{contentfulProduct.description}</p>
       <button
-
-style={{
+        style={{
           background: 'darkorange',
           color: 'white',
           padding: '0.3em',
