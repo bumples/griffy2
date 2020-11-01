@@ -14,7 +14,7 @@ const getSiteMetadata = graphql`
       siteMetadata {
         title
         author
-        createdAt
+        
       }
     }
   }
@@ -37,7 +37,7 @@ const Layout = ({ children }) => (
           {children}
           <footer>
             Built by {data.site.siteMetadata.author}, Created{' '}
-            {data.site.siteMetadata.createdAt}
+            {data.site.siteMetadata}
           </footer>
         </div>
       </>
