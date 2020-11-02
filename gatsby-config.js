@@ -21,11 +21,20 @@ module.exports = {
     },   
     
 
-    `gatsby-plugin-react-helmet`,
+     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages/`,
+      }, 
+    },  
+   `gatsby-transformer-javascript-frontmatter`,
+   
+   `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`, 
-
+    `gatsby-plugin-sharp`,  
+ 
     // {
     //   resolve: "gatsby-plugin-snipcart",
     //   options: {
