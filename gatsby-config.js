@@ -12,17 +12,16 @@ module.exports = {
   },
   
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    
     {
-      resolve: `gatsby-source-filesystem`,
+    resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
         path: `${__dirname}/src/pages/`,
-      },
-    },
-
+      }, 
+    },   
     'gatsby-transformer-javascript-frontmatter'
+
+    `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`, 
