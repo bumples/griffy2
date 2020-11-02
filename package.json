@@ -31,6 +31,8 @@
     "typography": "^0.16.19"
   },
   "devDependencies": {
+    "@babel/parser": "^7.12.3",
+    "@babel/traverse": "^7.12.1",
     "prettier": "2.1.2"
   },
   "keywords": [
