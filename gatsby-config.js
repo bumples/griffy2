@@ -10,6 +10,7 @@ module.exports = {
     description: `Great kids books to read.`,
     author: `Bumples`,
   },
+  
   plugins: [
     `gatsby-plugin-react-helmet`,
     
@@ -17,18 +18,11 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `pages`,
-        path: `${__dirname}/src/pages`,
+        path: `${__dirname}/src/pages/`,
       },
     },
-    
-    {
-      
-    resolve: `gatsby-source-filesystem`,
-    options: {
-      path: `${__dirname}/src/pages`,
-      name: `markdown-pages`,
-    },
-  },
+
+    'gatsby-transformer-javascript-frontmatter'
     `gatsby-transformer-remark`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`, 
@@ -40,10 +34,8 @@ module.exports = {
     //     autopop: true,
     //   },
     // },
-     {
-    resolve: 'gatsby-plugin-mdx-frontmatter'
-  },
-    {
+
+    {   
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
@@ -54,6 +46,7 @@ module.exports = {
         display: `minimal-ui`,
     },
     },
+
     {
       resolve: 'gatsby-source-contentful',
       options:{
@@ -66,3 +59,4 @@ module.exports = {
     // 'gatsby-plugin-offline',
   ],
 };
+
