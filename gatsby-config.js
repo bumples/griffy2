@@ -19,7 +19,7 @@ module.exports = {
         path: `${__dirname}/src/pages/`,
       }, 
     },   
-    'gatsby-transformer-javascript-frontmatter'
+    
 
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-remark`,
